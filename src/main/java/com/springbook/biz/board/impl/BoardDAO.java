@@ -19,7 +19,7 @@ public class BoardDAO{
 	private ResultSet rs = null;
 	
 	// SQL 명령어들
-	private final String BOARD_INSERT = "insert into board(seq, title, writer, content) values((select ifnull(max(seq),0)+1 from board),?,?,?)";
+	private final String BOARD_INSERT = "insert into board(seq, title, writer, content) values((select ifnull(max(seq),0)+1 from board a),?,?,?)";
 	private final String BOARD_UPDATE = "update board set title=?, content=? where seq=?";
 	private final String BOARD_DELETE = "delete board where seq=?";
 	private final String BOARD_GET = "select * from board where seq=?";

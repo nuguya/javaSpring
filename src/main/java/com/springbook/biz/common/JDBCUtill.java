@@ -9,9 +9,9 @@ import java.sql.ResultSet;
 public class JDBCUtill {
 	public static Connection getConnection() {
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			 // mysql은 "jdbc:mysql://localhost/사용할db이름" 이다.
-            String url = "jdbc:mysql://localhost/boardWeb";
+            String url = "jdbc:mysql://localhost:3306/boardWeb?serverTimezone=UTC";
             
             // user와 password는 깃허브에 올릴 시 바꿔서 올려야함.
 			return DriverManager.getConnection(url);

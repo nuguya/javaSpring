@@ -7,7 +7,7 @@ public class BoardVO {
 	private String title;
 	private String writer;
 	private String content;
-	private Date refDate;
+	private Date regDate;
 	private int cnt;
 	public int getSeq() {
 		return seq;
@@ -33,19 +33,19 @@ public class BoardVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Date getRefDate() {
-		return refDate;
+	public Date getRegDate() {
+		return regDate;
 	}
-	public void setRefDate(Date refDate) {
-		this.refDate = refDate;
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
 	}
 	public int getCnt() {
 		return cnt;
 	}
 	@Override
 	public String toString() {
-		return "BoardVO [seq=" + seq + ", title=" + title + ", writer=" + writer + ", content=" + content + ", refDate="
-				+ refDate + ", cnt=" + cnt + "]";
+		return "BoardVO [seq=" + seq + ", title=" + title + ", writer=" + writer + ", content=" + content + ", regDate="
+				+ regDate + ", cnt=" + cnt + "]";
 	}
 	public void setCnt(int cnt) {
 		this.cnt = cnt;

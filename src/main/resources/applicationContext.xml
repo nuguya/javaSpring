@@ -13,6 +13,7 @@
 	<bean id="log" class="com.springbook.biz.common.Log4jAdvice"></bean>
 	<bean id="before" class="com.springbook.biz.common.BeforeAdvice"></bean>
 	<bean id="around" class="com.springbook.biz.common.AroundAdvice"></bean>
+	<bean id="afterReturning" class="com.springbook.biz.common.AfterReturningAdvice"></bean>
 	
 	<aop:config>
 		<aop:pointcut expression="execution(* com.springbook.biz..*Impl.*(..))" id="allPointcut"/>
@@ -20,8 +21,8 @@
 		<aop:aspect ref="before">
 			<aop:before method="beforeLog" pointcut-ref="allPointcut"/>
 		</aop:aspect>
-		<aop:aspect ref="around">
-			<aop:around pointcut-ref="allPointcut" method="aroundLog"/>
+		<aop:aspect ref="afterReturning">
+			<aop:after-returning method="afterLog" pointcut-ref="allPointcut" returning="returnObj"/>
 		</aop:aspect>
 	</aop:config>
 	

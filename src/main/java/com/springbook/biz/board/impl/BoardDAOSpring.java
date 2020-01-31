@@ -12,6 +12,7 @@ import com.springbook.biz.board.BoardVO;
 
 @Repository("boardDAOSpring")
 public class BoardDAOSpring {
+	private final String BOARD_INSERT_TEST = "insert into board(seq,title,writer,content) values(?,?,?,?)";
 	private final String BOARD_INSERT = "insert into board(seq, title, writer, content) values((select ifnull(max(seq),0)+1 from board a),?,?,?)";
 	private final String BOARD_UPDATE = "update board set title=?, content=? where seq=?";
 	private final String BOARD_DELETE = "delete board where seq=?";

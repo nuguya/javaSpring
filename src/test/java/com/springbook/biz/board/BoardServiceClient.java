@@ -13,8 +13,8 @@ public class BoardServiceClient {
 		
 		BoardVO vo = new BoardVO();
 		vo.setTitle("임시 제목");
-		vo.setWriter("김근영");
-		vo.setContent("임시 내용.........................");
+		vo.setWriter("하바나");
+		vo.setContent("우나나나나");
 		boardService.insertBoard(vo);
 		
 		List<BoardVO> boardList = boardService.getBoardList(vo);

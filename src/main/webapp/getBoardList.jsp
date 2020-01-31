@@ -3,11 +3,8 @@
 <%@ page import="com.springbook.biz.board.BoardVO" %>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-    
 <%
-	BoardVO vo = new BoardVO();
-	BoardDAO boardDAO = new BoardDAO();
-	List<BoardVO> boardList = boardDAO.getBoardList(vo);
+	List<BoardVO> boardList = (List)session.getAttribute("boardList");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -18,7 +15,7 @@
 <body>
 	<center>
 		<h1>글 목록</h1>
-		<h3>테스트님 환영합니다...<a href="logout_proc.jsp">Log-out</a></h3>
+		<h3>테스트님 환영합니다...<a href="logout.do">Log-out</a></h3>
 		
 		<form action="getBoardList.jsp" method="post">
 			<table border="1" cellpadding="0" cellspacing="0" width="700">
@@ -47,7 +44,7 @@
 			<% for(BoardVO board: boardList) { %>
 				<tr>
 					<td><%= board.getSeq() %></td>
-					<td align="left"><a href="getBoard.jsp?seq=<%= board.getSeq() %>"><%= board.getTitle() %></a></td>
+					<td align="left"><a href="getBoard.do?seq=<%= board.getSeq() %>"><%= board.getTitle() %></a></td>
 					<td><%= board.getWriter() %></td>
 					<td><%= board.getRegDate() %></td>
 					<td><%= board.getCnt() %></td>
